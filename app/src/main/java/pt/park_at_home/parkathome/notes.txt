@@ -1,0 +1,3 @@
+ActionBar actionBar = getSupportActionBar();
+actionBar.hide();
+Snackbar.make(view, "Preencha todos os campos!", Snackbar.LENGTH_LONG).setAction("Teste", null).show();
