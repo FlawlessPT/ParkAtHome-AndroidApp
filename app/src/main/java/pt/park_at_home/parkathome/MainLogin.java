@@ -20,7 +20,6 @@ public class MainLogin extends AppCompatActivity
     EditText password;
     TextView registerBtn;
     Button loginBtn;
-    Button testBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -32,7 +31,6 @@ public class MainLogin extends AppCompatActivity
         username = findViewById(R.id.usernameText);
         password = findViewById(R.id.passwordText);
         loginBtn = findViewById(R.id.buttonLogin);
-        testBtn = findViewById(R.id.testeButton);
 
         registerBtn.setOnClickListener(new View.OnClickListener()
         {
@@ -43,14 +41,6 @@ public class MainLogin extends AppCompatActivity
             }
         });
 
-        testBtn.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-
-            }
-        });
 
         loginBtn.setOnClickListener(new View.OnClickListener()
         {
