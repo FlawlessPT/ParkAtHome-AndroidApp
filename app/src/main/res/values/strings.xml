@@ -81,4 +81,7 @@
     <string name="nav_header_subtitle">Matricula(s)</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Configurações</string>
+    <string name="login">LOGIN</string>
+    <string name="nome_utilizador">Nome Utilizador</string>
+    <string name="password">Password</string>
 </resources>

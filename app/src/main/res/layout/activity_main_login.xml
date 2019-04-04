@@ -15,7 +15,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="57dp"
         android:ems="10"
-        android:hint="Nome Utilizador"
+        android:hint="@string/nome_utilizador"
         android:inputType="textNoSuggestions"
         android:selectAllOnFocus="false"
         android:singleLine="true" />
@@ -28,7 +28,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="118dp"
         android:ems="10"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:selectAllOnFocus="false"
         android:singleLine="true" />
@@ -41,11 +41,11 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="195dp"
-        android:text="LOGIN"
+        android:text="@string/login"
         android:textAppearance="@style/TextAppearance.AppCompat" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textViewRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"

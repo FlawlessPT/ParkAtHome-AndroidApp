@@ -21,6 +21,7 @@ public class Parking extends AppCompatActivity implements NavigationView.OnNavig
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        Toast.makeText(getApplicationContext(), "teste", Toast.LENGTH_SHORT);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parking);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -74,7 +75,7 @@ public class Parking extends AppCompatActivity implements NavigationView.OnNavig
             public void onClick(View v)
             {
                 Toast.makeText(getApplicationContext(), "teste", Toast.LENGTH_SHORT);
-            }
+        }
         });
         return true;
     }
