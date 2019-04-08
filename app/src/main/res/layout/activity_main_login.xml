@@ -8,56 +8,46 @@
     tools:context=".MainLogin">
 
     <EditText
-        android:id="@+id/usernameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="57dp"
-        android:ems="10"
-        android:hint="@string/nome_utilizador"
-        android:inputType="textNoSuggestions"
-        android:selectAllOnFocus="false"
-        android:singleLine="true" />
+            android:id="@+id/usernameText"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="57dp"
+            android:ems="10"
+            android:hint="@string/nome_utilizador"
+            android:inputType="textNoSuggestions"
+            android:selectAllOnFocus="false"
+            android:singleLine="true" android:autofillHints="" android:layout_width="wrap_content"/>
 
     <EditText
-        android:id="@+id/passwordText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="118dp"
-        android:ems="10"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:selectAllOnFocus="false"
-        android:singleLine="true" />
+            android:id="@+id/passwordText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="118dp"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:selectAllOnFocus="false"
+            android:singleLine="true" android:layout_alignStart="@+id/usernameText" android:importantForAutofill="no"/>
 
     <Button
-        android:id="@+id/buttonLogin"
-        style="@style/Widget.MaterialComponents.Button.Icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="195dp"
-        android:text="@string/login"
-        android:textAppearance="@style/TextAppearance.AppCompat" />
-
+            android:id="@+id/buttonLogin"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_width="133dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="194dp"
+            android:text="@string/login"
+            android:textAppearance="@style/TextAppearance.AppCompat" android:textSize="16sp" android:textStyle="bold"
+    />
     <TextView
-        android:id="@+id/textViewRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginEnd="27dp"
-        android:layout_marginBottom="40dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:text="@string/register"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="14sp"
-        android:textStyle="italic" />
-
+            android:text="Ainda não possui conta? Registe-se aqui!"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true" android:id="@+id/textView2" android:layout_marginBottom="29dp"
+            android:textStyle="italic" android:textAllCaps="false" android:textSize="17sp"
+            android:textAlignment="center"/>
 </RelativeLayout>

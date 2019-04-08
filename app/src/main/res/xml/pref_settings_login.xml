@@ -1,0 +1,23 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+
+    <EditTextPreference
+            android:id="@+id/editTextUsername"
+            android:capitalize="words"
+            android:inputType="textCapWords"
+            android:maxLines="1"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Alterar Nome Utilizador"/>
+    <EditTextPreference
+            android:id="@+id/editTextPassword"
+            android:capitalize="words"
+            android:inputType="textCapWords"
+            android:maxLines="1"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Alterar Password"
+            android:password="true"
+    />
+</PreferenceScreen>

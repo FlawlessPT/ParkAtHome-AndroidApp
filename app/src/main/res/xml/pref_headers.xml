@@ -16,5 +16,9 @@
         android:fragment="pt.park_at_home.parkathome.SettingsActivity$DataSyncPreferenceFragment"
         android:icon="@drawable/ic_sync_black_24dp"
         android:title="@string/pref_header_data_sync" />
+    <header
+            android:fragment="pt.park_at_home.parkathome.SettingsActivity$SettingsLoginFragment"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/pref_settings_login"/>
 
 </preference-headers>

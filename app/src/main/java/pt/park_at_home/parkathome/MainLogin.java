@@ -1,24 +1,19 @@
 package pt.park_at_home.parkathome;
 
-import android.app.AlertDialog;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.StrictMode;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import pt.park_at_home.parkathome.database.DBConnection;
-import pt.park_at_home.parkathome.utils.AlertDialogBuilder;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import pt.park_at_home.parkathome.database.Functions;
+import pt.park_at_home.parkathome.managers.SettingsLogin;
+import pt.park_at_home.parkathome.utils.OpenType;
 
 public class MainLogin extends AppCompatActivity
 {
@@ -27,41 +22,46 @@ public class MainLogin extends AppCompatActivity
     TextView registerTextView;
     Button loginBtn;
 
-    public static Connection con = null;
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_login);
-        registerTextView = findViewById(R.id.textViewRegister);
+        registerTextView = findViewById(R.id.textView2);
         loginBtn = findViewById(R.id.buttonLogin);
         username = findViewById(R.id.usernameText);
         password = findViewById(R.id.passwordText);
 
-        registerTextView.setOnClickListener(v -> goToUrl("http://www.facebook.com/"));
+        registerTextView.setOnClickListener(v -> goToUrl("http://www.parkathome.tk"));
 
         loginBtn.setOnClickListener(view ->
         {
-//                                new AlertDialog.Builder(MainLogin.this)
-//                                        .setTitle("Aviso")
-//                                        .setMessage("Ligação efetuada com sucesso!")
-//                                        .setCancelable(false)
-//                                        .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
-//                                            public void onClick(DialogInterface dialog, int which) {
-//                                                Toast.makeText(getApplicationContext(), "teste", Toast.LENGTH_SHORT).show();
-//                                            }
-//                                        }).show();
+            SettingsLogin settingsLogin = new SettingsLogin();
+
             if (!(username.getText().toString().equalsIgnoreCase("")) && !(password.getText().toString().equalsIgnoreCase("")))
             {
-                if (username.getText().toString().equalsIgnoreCase("admin") && password.getText().toString().equalsIgnoreCase("root"))
+                if (username.getText().toString().equalsIgnoreCase(settingsLogin.getUsername()) && password.getText().toString().equalsIgnoreCase(settingsLogin.getPassword()))
                 {
-                    DBConnection.openConnection(MainLogin.this, "Settings");
+                    DBConnection.openConnection(MainLogin.this, OpenType.SETTINGS);
                 }
-
                 else
                 {
-                    DBConnection.openConnection(MainLogin.this, "Parking");
+                    String username2 = username.getText().toString();
+                    String password2 = password.getText().toString();
+
+                    if (Functions.existsUser(username2, password2, MainLogin.this))
+                    {
+                        Toast.makeText(MainLogin.this, "Login efetuado com sucesso!", Toast.LENGTH_LONG).show();
+                        DBConnection.openConnection(MainLogin.this, OpenType.PARKING);
+                        username.onEditorAction(EditorInfo.IME_ACTION_DONE);
+                        password.onEditorAction(EditorInfo.IME_ACTION_DONE);
+                    }
+                    else
+                    {
+                        Toast.makeText(MainLogin.this, "Utilizador ou password incorretos!", Toast.LENGTH_LONG).show();
+                        username.onEditorAction(EditorInfo.IME_ACTION_DONE);
+                        password.onEditorAction(EditorInfo.IME_ACTION_DONE);
+                    }
                 }
             }
             else
