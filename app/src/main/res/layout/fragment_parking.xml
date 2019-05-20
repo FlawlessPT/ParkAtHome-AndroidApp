@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorParking">
+    <TextView
+            android:text="Lotação do Parque"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true" android:id="@+id/textView3" android:layout_marginTop="0dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"
+    />
+    <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="?android:attr/listDivider"
+            android:layout_centerHorizontal="true" android:layout_alignParentTop="true"
+    />
+    <TextView
+            android:text="Saida"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_centerHorizontal="true"
+            android:id="@+id/textView4"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginBottom="6dp"
+            android:layout_alignBottom="@+id/divider"
+    />
+    <ProgressBar
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:background="@drawable/button_border"
+            android:backgroundTint="@color/design_default_color_primary"
+            android:id="@+id/progressBar" android:max="18" android:progressTint="@color/colorAccent"
+            android:progressDrawable="@android:color/holo_blue_dark" android:progress="1"
+            android:layout_alignParentStart="true" android:layout_marginStart="0dp" android:layout_alignParentEnd="true"
+            android:layout_marginEnd="0dp" android:layout_marginTop="31dp" android:layout_alignParentTop="true"
+    />
+    <Button
+            android:text="1"
+            android:layout_width="149dp"
+            android:background="@drawable/button_border"
+            android:layout_height="wrap_content" android:layout_alignParentStart="true"
+            android:layout_marginStart="-3dp" android:layout_alignParentTop="true" android:id="@+id/vaga1"
+            android:layout_marginTop="59dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
+            android:layout_toStartOf="@+id/divider" android:layout_marginEnd="45dp"
+            android:layout_alignParentBottom="@+id/vaga3"
+    />
+    <Button
+            android:text="2"
+            android:layout_width="149dp"
+            android:background="@drawable/button_border"
+            android:layout_height="wrap_content"
+            android:id="@+id/vaga2"
+            android:layout_marginEnd="-3dp" android:layout_alignParentEnd="true"
+            android:layout_marginTop="59dp" android:layout_alignParentTop="true" android:layout_toEndOf="@+id/divider"
+            android:layout_marginStart="45dp"
+            android:layout_alignParentBottom="@+id/vaga4"
+    />
+    <Button
+            android:text="3"
+            android:layout_width="149dp"
+            android:background="@drawable/button_border"
+            android:layout_height="wrap_content" android:layout_alignParentStart="true"
+            android:layout_marginStart="-3dp" android:id="@+id/vaga3"
+            android:layout_below="@+id/vaga1" android:layout_marginTop="-2dp" android:layout_toStartOf="@+id/divider"
+            android:layout_marginEnd="45dp"
+            android:layout_alignParentBottom="@+id/vaga5"
+    />
+    <Button
+            android:text="4"
+            android:layout_width="149dp"
+            android:background="@drawable/button_border"
+            android:layout_height="wrap_content"
+            android:id="@+id/vaga4"
+            android:layout_marginEnd="-3dp" android:layout_alignParentEnd="true"
+            android:layout_below="@+id/vaga1" android:layout_marginTop="-2dp"
+            android:layout_toEndOf="@+id/divider" android:layout_marginStart="45dp"
+            android:layout_alignParentBottom="@+id/vaga6"
+    />
+    <Button
+            android:text="5"
+            android:layout_width="149dp"
+            android:background="@drawable/button_border"
+            android:layout_height="wrap_content" android:layout_alignParentStart="true"
+            android:layout_marginStart="-3dp" android:id="@+id/vaga5"
+            android:layout_below="@+id/vaga4" android:layout_marginTop="-2dp" android:layout_toStartOf="@+id/divider"
+            android:layout_marginEnd="45dp"
+            android:layout_alignParentBottom="@+id/vaga7"
+    />
+    <Button
+            android:text="6"
+            android:layout_width="149dp"
+            android:background="@drawable/button_border"
+            android:layout_height="wrap_content"
+            android:id="@+id/vaga6"
+            android:layout_marginEnd="-3dp" android:layout_alignParentEnd="true"
+            android:layout_below="@+id/vaga4" android:layout_marginTop="-2dp" android:layout_toEndOf="@+id/divider"
+            android:layout_marginStart="45dp"
+            android:layout_alignParentBottom="@+id/vaga8"
+    />
+    <Button
+            android:text="7"
+            android:layout_width="149dp"
+            android:background="@drawable/button_border"
+            android:layout_height="wrap_content" android:layout_alignParentStart="true"
+            android:layout_marginStart="-3dp" android:id="@+id/vaga7"
+            android:layout_below="@+id/vaga6" android:layout_marginTop="-2dp" android:layout_toStartOf="@+id/divider"
+            android:layout_marginEnd="45dp"
+            android:layout_alignParentBottom="@+id/vaga9"
+    />
+    <Button
+            android:text="8"
+            android:layout_width="149dp"
+            android:background="@drawable/button_border"
+            android:layout_height="wrap_content"
+            android:id="@+id/vaga8"
+            android:layout_marginEnd="-3dp" android:layout_alignParentEnd="true"
+            android:layout_below="@+id/vaga6" android:layout_marginTop="-2dp" android:layout_toEndOf="@+id/divider"
+            android:layout_marginStart="45dp"
+            android:layout_alignParentBottom="@+id/vaga10"
+    />
+    <Button
+            android:text="9"
+            android:layout_width="149dp"
+            android:background="@drawable/button_border"
+            android:layout_height="wrap_content" android:layout_alignParentStart="true"
+            android:layout_marginStart="-3dp" android:id="@+id/vaga9"
+            android:layout_below="@+id/vaga7" android:layout_marginTop="-2dp" android:layout_toStartOf="@+id/divider"
+            android:layout_marginEnd="45dp"
+            android:layout_alignParentBottom="@+id/vaga11"
+    />
+    <Button
+            android:text="10"
+            android:layout_width="149dp"
+            android:background="@drawable/button_border"
+            android:layout_height="wrap_content"
+            android:id="@+id/vaga10"
+            android:layout_marginEnd="-3dp" android:layout_alignParentEnd="true"
+            android:layout_below="@+id/vaga7" android:layout_marginTop="-2dp" android:layout_toEndOf="@+id/divider"
+            android:layout_marginStart="45dp"
+            android:layout_alignParentBottom="@+id/vaga12"
+    />
+    <Button
+            android:text="11"
+            android:layout_width="149dp"
+            android:background="@drawable/button_border"
+            android:layout_height="wrap_content" android:layout_alignParentStart="true"
+            android:layout_marginStart="-3dp" android:id="@+id/vaga11"
+            android:layout_below="@+id/vaga9" android:layout_marginTop="-2dp" android:layout_toStartOf="@+id/divider"
+            android:layout_marginEnd="45dp"
+            android:layout_alignParentBottom="@+id/vaga13"
+    />
+    <Button
+            android:text="12"
+            android:layout_width="149dp"
+            android:background="@drawable/button_border"
+            android:layout_height="wrap_content"
+            android:id="@+id/vaga12"
+            android:layout_marginEnd="-3dp" android:layout_alignParentEnd="true"
+            android:layout_below="@+id/vaga9" android:layout_marginTop="-2dp" android:layout_toEndOf="@+id/divider"
+            android:layout_marginStart="45dp"
+            android:layout_alignParentBottom="@+id/vaga14"
+    />
+    <Button
+            android:text="13"
+            android:layout_width="149dp"
+            android:background="@drawable/button_border"
+            android:layout_height="wrap_content" android:layout_alignParentStart="true"
+            android:layout_marginStart="-3dp" android:id="@+id/vaga13"
+            android:layout_below="@+id/vaga11" android:layout_marginTop="-2dp" android:layout_toStartOf="@+id/divider"
+            android:layout_marginEnd="45dp"
+            android:layout_alignParentBottom="@+id/vaga15"
+    />
+    <Button
+            android:text="14"
+            android:layout_width="149dp"
+            android:background="@drawable/button_border"
+            android:layout_height="wrap_content"
+            android:id="@+id/vaga14"
+            android:layout_marginEnd="-3dp" android:layout_alignParentEnd="true"
+            android:layout_below="@+id/vaga11" android:layout_marginTop="-2dp" android:layout_toEndOf="@+id/divider"
+            android:layout_marginStart="45dp"
+            android:layout_alignParentBottom="@+id/vaga16"
+    />
+    <Button
+            android:text="15"
+            android:layout_width="149dp"
+            android:background="@drawable/button_border"
+            android:layout_height="wrap_content" android:layout_alignParentStart="true"
+            android:layout_marginStart="-3dp" android:id="@+id/vaga15"
+            android:layout_toStartOf="@+id/divider"
+            android:layout_marginEnd="45dp" android:layout_below="@+id/vaga13" android:layout_marginTop="-2dp"
+            android:layout_alignParentBottom="@+id/vaga17"
+    />
+    <Button
+            android:text="16"
+            android:layout_width="149dp"
+            android:background="@drawable/button_border"
+            android:layout_height="wrap_content"
+            android:id="@+id/vaga16"
+            android:layout_marginEnd="-3dp" android:layout_alignParentEnd="true"
+            android:layout_below="@+id/vaga13" android:layout_marginTop="-2dp" android:layout_toEndOf="@+id/divider"
+            android:layout_marginStart="45dp"
+            android:layout_alignParentBottom="@+id/vaga18"
+    />
+    <Button
+            android:text="17"
+            android:layout_width="149dp"
+            android:background="@drawable/button_border"
+            android:layout_height="wrap_content" android:layout_alignParentStart="true"
+            android:layout_marginStart="-3dp" android:id="@+id/vaga17"
+            android:layout_toStartOf="@+id/divider"
+            android:layout_marginEnd="45dp"
+            android:layout_below="@+id/vaga15"
+            android:layout_marginTop="-2dp"/>
+    <Button
+            android:text="18"
+            android:layout_width="139dp"
+            android:background="@drawable/button_border"
+            android:layout_height="wrap_content"
+            android:id="@+id/vaga18"
+            android:layout_marginEnd="-3dp" android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/divider" android:layout_marginStart="45dp"
+            android:layout_below="@+id/vaga15"
+            android:layout_marginTop="-2dp"
+    />
+    <ImageView
+            android:layout_width="52dp"
+            android:layout_centerVertical="true"
+            android:layout_height="34dp" android:src="@drawable/arrow_down"
+            android:layout_centerHorizontal="true" android:layout_below="@+id/vaga3" android:id="@+id/imageView"
+            android:layout_marginTop="-88dp" android:layout_above="@+id/textView4" android:layout_marginBottom="378dp"
+            android:contentDescription="@string/app_name"
+            android:layout_marginStart="-4dp"
+    />
+    <ImageView
+            android:layout_width="52dp"
+            android:layout_centerVertical="true"
+            android:layout_height="34dp" android:src="@drawable/arrow_down"
+            android:layout_below="@+id/vaga3" android:id="@+id/imageView5"
+            android:layout_marginTop="280dp" android:layout_above="@+id/textView4" android:layout_marginBottom="4dp"
+            android:contentDescription="@string/app_name" android:layout_alignStart="@+id/textView4"
+            android:layout_marginStart="-4dp"/>
+    <ImageView
+            android:layout_width="52dp"
+            android:layout_height="34dp" android:src="@drawable/arrow_down"
+            android:layout_below="@+id/vaga3" android:id="@+id/imageView3"
+            android:layout_marginTop="98dp" android:layout_above="@+id/textView4" android:layout_marginBottom="188dp"
+            android:contentDescription="@string/app_name" android:layout_alignStart="@+id/textView4"
+            android:layout_marginStart="-4dp"/>
+    <ImageView
+            android:layout_width="52dp"
+            android:layout_centerVertical="true"
+            android:layout_height="34dp" android:src="@drawable/arrow_down"
+            android:layout_below="@+id/vaga3" android:id="@+id/imageView4"
+            android:layout_marginTop="190dp" android:layout_above="@+id/textView4" android:layout_marginBottom="96dp"
+            android:contentDescription="@string/app_name" android:layout_alignStart="@+id/textView4"
+            android:layout_marginStart="-4dp"/>
+    <ImageView
+            android:layout_width="52dp"
+            android:layout_centerVertical="true"
+            android:layout_height="34dp" android:src="@drawable/arrow_down"
+            android:layout_centerHorizontal="true" android:layout_below="@+id/vaga3" android:id="@+id/imageView2"
+            android:layout_marginTop="5dp" android:layout_above="@+id/textView4" android:layout_marginBottom="285dp"
+            android:contentDescription="@string/app_name"
+            android:layout_marginStart="-4dp"
+    />
+</RelativeLayout>

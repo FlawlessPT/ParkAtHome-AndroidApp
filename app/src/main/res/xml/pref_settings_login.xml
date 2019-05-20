@@ -3,21 +3,22 @@
                   android:layout_height="match_parent">
 
     <EditTextPreference
-            android:id="@+id/editTextUsername"
             android:capitalize="words"
+            android:defaultValue="admin"
             android:inputType="textCapWords"
+            android:key="username"
             android:maxLines="1"
             android:selectAllOnFocus="true"
             android:singleLine="true"
-            android:title="Alterar Nome Utilizador"/>
+            android:title="Nome Utilizador"/>
     <EditTextPreference
-            android:id="@+id/editTextPassword"
             android:capitalize="words"
+            android:defaultValue="root"
             android:inputType="textCapWords"
+            android:key="password"
             android:maxLines="1"
             android:selectAllOnFocus="true"
             android:singleLine="true"
-            android:title="Alterar Password"
-            android:password="true"
+            android:title="Password"
     />
 </PreferenceScreen>

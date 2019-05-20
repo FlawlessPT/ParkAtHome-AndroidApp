@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Park@Home</string>
     <string name="register">Ainda não possui conta? Clique aqui para se registar.</string>
-    <string name="title_activity_settings">Configurações</string>
+    <string name="title_activity_settings">Definições</string>
 
     <!-- Strings related to Settings -->
 
@@ -62,7 +62,7 @@
         <item>3</item>
     </string-array>
 
-    <string-array name="multi_select_list_preference_default_value" />
+    <string-array name="multi_select_list_preference_default_value"/>
 
     <string name="pref_title_system_sync_settings">System sync settings</string>
 
@@ -75,7 +75,7 @@
     <string name="pref_ringtone_silent">Silent</string>
 
     <string name="pref_title_vibrate">Vibrate</string>
-    <string name="title_activity_parking">Parque</string>
+    <string name="title_activity_parking">Parque de Estacionamento</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Nome-Perfil</string>
@@ -85,4 +85,5 @@
     <string name="login">LOGIN</string>
     <string name="nome_utilizador">Nome Utilizador</string>
     <string name="password">Password</string>
+    <string name="guardar">Guardar</string>
 </resources>

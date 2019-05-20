@@ -24,4 +24,9 @@ public class TesteMessage
     {
         Toast.makeText(context, "Test Message4", Toast.LENGTH_LONG).show();
     }
+
+    public static void sendToastMessage(Context context, String message)
+    {
+        Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+    }
 }

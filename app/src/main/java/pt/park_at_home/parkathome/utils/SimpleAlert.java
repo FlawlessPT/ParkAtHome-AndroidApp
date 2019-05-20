@@ -2,14 +2,16 @@ package pt.park_at_home.parkathome.utils;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.view.View;
 
 public class SimpleAlert
 {
     private Context context;
     private String message;
 
-    public SimpleAlert()
+    public SimpleAlert(Context context)
     {
+        this.context = context;
     }
 
     public Context getContext()
@@ -34,6 +36,6 @@ public class SimpleAlert
 
     public void show()
     {
-        new AlertDialog.Builder(this.context).setTitle("Aviso: ").setCancelable(true).setMessage(this.message).create().show();
+        new AlertDialog.Builder(this.context).setTitle("Aviso: ").setCancelable(true).setMessage(this.message).setPositiveButton("OK", (dialog, which) -> dialog.cancel()).show();
     }
 }

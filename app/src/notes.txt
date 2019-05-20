@@ -1,0 +1,24 @@
+ActionBar actionBar = getSupportActionBar();
+actionBar.hide();
+Snackbar.make(view, "Preencha todos os campos!", Snackbar.LENGTH_LONG).setAction("Teste", null).show();
+
+SOLVED: RESOLVER O PROBLEMA DE AO VOLTAR A ENTRAR NA PARTE DE MUDAR AS INFORMAÇÕES DO ADMIN LOGIN DEPOIS DE TER FEITO AS ALTERAÇÕES DO MESMO
+TODO: DENTRO DA ACTIVITY DE MUDAR OS DADOS
+    TODO:
+SOLVED: FAZER A PARTE DE AO CLICAR NO NAVIGATION MUDAR A ACTIVITY
+TODO: FAZER SISTEMA DE MEMORIZAR LOGIN
+    TODO: TENTAR ARRANJAR O UUID DE CADA DISPOSITIVO
+SOLVED: APRENDER A COLOCAR IMAGENS EM IMAGE VIEWS SEM DAR PROBLEMAS NA EXECUÇÃO DA APLICAÇÃO
+TODO: FAZER OS CLIQUES EM CADA BOTÃO/VAGA DO PARQUE
+TODO: FAZER ACTIVITY PARA CONSULTAR E ADICIONAR UMA MATRICULA
+AWAIT: RESOLVER O PROBLEMA DE QUANDO VOLTAR PARA AREA DE LOGIN NÃO ESTAR A APAGAR A LINHA DA TABELA LOGGEDUSERS
+    //            @SuppressLint("SimpleDateFormat")
+    //            SimpleDateFormat formatter = new SimpleDateFormat("dd_MM_yyyy");
+    //            Date now = new Date();
+    //            String fileName = formatter.format(now) + ".txt";//like 2016_01_12.txt
+    //this.file.delete();
+    //                String fileName = Uri.parse("TempData").getLastPathSegment();
+    //                this.file = File.createTempFile(fileName, null, context.getCacheDir());
+    //                write("teste");
+    //                String teste = read();
+    //TesteMessage.sendToastMessage(this.context, teste + " " + this.file.getAbsolutePath() + " " + this.file.toString());

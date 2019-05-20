@@ -11,10 +11,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.preference.*;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.text.TextUtils;
 import android.view.MenuItem;
-import android.support.v4.app.NavUtils;
+import pt.park_at_home.parkathome.managers.Admin;
+import pt.park_at_home.parkathome.utils.AppCompatPreferenceActivity;
+import pt.park_at_home.parkathome.utils.SimpleAlert;
 
 import java.util.List;
 
@@ -121,7 +124,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        //setupActionBar();
+        setupActionBar();
     }
 
     /**
@@ -286,19 +289,59 @@ public class SettingsActivity extends AppCompatPreferenceActivity
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public static class SettingsLoginFragment extends PreferenceFragment
     {
-        EditTextPreference username;
-        EditTextPreference password;
-
         @Override
         public void onCreate(Bundle savedInstanceState)
         {
-            //TODO: THIS WEEK:
-            //TODO: ACABAR O SISTEMA DE MUDAR A PASSWORD DO ADMIN
-            //TODO: COMEÇAR A TRABALHAR NA ACTIVITY PRINCIPAL DO PARKING
-            //TODO: CRIAR A ACTIVITY DE ALTERAR OS DADOS DO UTILIZADOR
-
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.pref_settings_login);
+            setHasOptionsMenu(true);
+            EditTextPreference username = (EditTextPreference) findPreference("username");
+            EditTextPreference password = (EditTextPreference) findPreference("password");
+            Admin admin = new Admin(getActivity());
+            username.setSummary(admin.getUsername());
+            password.setSummary(admin.getPassword());
+        }
+
+        @Override
+        public void onResume()
+        {
+            EditTextPreference username = (EditTextPreference) findPreference("username");
+            EditTextPreference password = (EditTextPreference) findPreference("password");
+
+            username.setOnPreferenceChangeListener((preference, newValue) ->
+            {
+                try
+                {
+                    Admin admin = new Admin(getActivity());
+                    username.setSummary(username.getEditText().getText());
+                    admin.setUsername(username.getEditText().getText().toString());
+                } catch (Exception e)
+                {
+                    SimpleAlert alert = new SimpleAlert(getActivity());
+                    alert.setMessage(e.getMessage());
+                    alert.show();
+                }
+
+                return false;
+            });
+
+            password.setOnPreferenceChangeListener((preference, newValue) ->
+            {
+                try
+                {
+                    Admin admin = new Admin(getActivity());
+                    password.setSummary(password.getEditText().getText());
+                    admin.setPassword(password.getEditText().getText().toString());
+                } catch (Exception e)
+                {
+                    SimpleAlert alert = new SimpleAlert(getActivity());
+                    alert.setMessage(e.getMessage());
+                    alert.show();
+                }
+
+                return false;
+            });
+            super.onResume();
         }
 
         @Override
