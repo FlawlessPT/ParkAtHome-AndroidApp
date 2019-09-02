@@ -23,9 +23,9 @@ public class DBConnection
 
     public void open()
     {
-        String user = "root";
-        String password = "Tlcq296LHBLyTVoV";
-        String connectionString = "jdbc:mysql://213.22.152.216/parkathome";
+        String user = "---";
+        String password = "---";
+        String connectionString = "jdbc:mysql://---/parkathome";
 
         try
         {
