@@ -1,16 +1,21 @@
 package pt.park_at_home.parkathome.utils;
 
 import android.content.Context;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+
 import pt.park_at_home.parkathome.managers.Variables;
 
-import java.io.*;
-
-public class TempFile
+public class MaxNumberMatriculasFile
 {
     private Context context;
     private File file;
 
-    public TempFile(Context context)
+    public MaxNumberMatriculasFile(Context context)
     {
         this.context = context;
     }
@@ -21,8 +26,8 @@ public class TempFile
         {
             try
             {
-                this.file = new File(context.getFilesDir(), Variables.FILE_NAME_USERNAME);
-                //System.out.println("[TEMPFILE] Ficheiro criado com sucesso!");
+                this.file = new File(context.getFilesDir(), Variables.FILE_MAX_NUMBER_MATRICULAS);
+                //System.out.println("[MaxNumberMatriculasFile] Ficheiro criado com sucesso!");
             } catch (Exception e)
             {
                 e.printStackTrace();

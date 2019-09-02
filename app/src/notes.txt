@@ -1,16 +1,22 @@
-ActionBar actionBar = getSupportActionBar();
+﻿ActionBar actionBar = getSupportActionBar();
 actionBar.hide();
 Snackbar.make(view, "Preencha todos os campos!", Snackbar.LENGTH_LONG).setAction("Teste", null).show();
 
-SOLVED: RESOLVER O PROBLEMA DE AO VOLTAR A ENTRAR NA PARTE DE MUDAR AS INFORMAÇÕES DO ADMIN LOGIN DEPOIS DE TER FEITO AS ALTERAÇÕES DO MESMO
-TODO: DENTRO DA ACTIVITY DE MUDAR OS DADOS
-    TODO:
-SOLVED: FAZER A PARTE DE AO CLICAR NO NAVIGATION MUDAR A ACTIVITY
+Android Device Monitor
+
 TODO: FAZER SISTEMA DE MEMORIZAR LOGIN
-    TODO: TENTAR ARRANJAR O UUID DE CADA DISPOSITIVO
+SOLVED: DAR A POSSIBILIDADE DE REMOVER O LUGAR DA VAGA DE RESERVA
+TODO: REMOVER MATRICULAS QUE JÁ ESTEJAM A SER USADAS NO PARQUE DA LISTA DE MATRICULAS PARA RESERVAR
+SOLVED: FAZER ACTIVITY PARA CONSULTAR E ADICIONAR UMA MATRICULA
+SOLVED: CARREGAR OS LUGARES RESERVADOS AO ENTRAR NA ACTIVITY
+SOLVED: PENSAR MELHOR NO SISTEMA GUARDAR LUGAR
+SOLVED: RESOLVER O PROBLEMA DE AO VOLTAR A ENTRAR NA PARTE DE MUDAR AS INFORMAÇÕES DO ADMIN LOGIN DEPOIS DE TER FEITO AS ALTERAÇÕES DO MESMO
+SOLVED: DENTRO DA ACTIVITY DE MUDAR OS DADOS
+    SOLVED: CARREGAR OS DADOS ANTIGOS DA PESSOA
+SOLVED: FAZER A PARTE DE AO CLICAR NO NAVIGATION MUDAR A ACTIVITY
+    SOLVED: TENTAR ARRANJAR O UUID DE CADA DISPOSITIVO
 SOLVED: APRENDER A COLOCAR IMAGENS EM IMAGE VIEWS SEM DAR PROBLEMAS NA EXECUÇÃO DA APLICAÇÃO
-TODO: FAZER OS CLIQUES EM CADA BOTÃO/VAGA DO PARQUE
-TODO: FAZER ACTIVITY PARA CONSULTAR E ADICIONAR UMA MATRICULA
+SOLVED: FAZER OS CLIQUES EM CADA BOTÃO/VAGA DO PARQUE
 AWAIT: RESOLVER O PROBLEMA DE QUANDO VOLTAR PARA AREA DE LOGIN NÃO ESTAR A APAGAR A LINHA DA TABELA LOGGEDUSERS
     //            @SuppressLint("SimpleDateFormat")
     //            SimpleDateFormat formatter = new SimpleDateFormat("dd_MM_yyyy");
@@ -22,3 +28,119 @@ AWAIT: RESOLVER O PROBLEMA DE QUANDO VOLTAR PARA AREA DE LOGIN NÃO ESTAR A APAG
     //                write("teste");
     //                String teste = read();
     //TesteMessage.sendToastMessage(this.context, teste + " " + this.file.getAbsolutePath() + " " + this.file.toString());
+    //        Timer t = new Timer();
+    //        t.schedule(new TimerTask() {
+    //            @Override
+    //            public void run() {
+    //                ArrayList<String> lugaresReservados2 = park.getLugaresReservados();
+    //
+    //                if (lugaresReservados2.contains("vaga1")) {
+    //                    parking.setVaga("vaga1");
+    //                    vaga1.setTypeface(null, Typeface.BOLD);
+    //                    vaga1.setText("OCUPADO\n" + parking.getMatriculaFromSavedPlace());
+    //                    vaga1.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.button_border2));
+    //                }
+    //                if (lugaresReservados2.contains("vaga2")) {
+    //                    parking.setVaga("vaga2");
+    //                    vaga2.setTypeface(null, Typeface.BOLD);
+    //                    vaga2.setText("OCUPADO\n" + parking.getMatriculaFromSavedPlace());
+    //                    vaga2.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.button_border2));
+    //                }
+    //                if (lugaresReservados2.contains("vaga3")) {
+    //                    parking.setVaga("vaga3");
+    //                    vaga3.setTypeface(null, Typeface.BOLD);
+    //                    vaga3.setText("OCUPADO\n" + parking.getMatriculaFromSavedPlace());
+    //                    vaga3.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.button_border2));
+    //                }
+    //                if (lugaresReservados2.contains("vaga4")) {
+    //                    parking.setVaga("vaga4");
+    //                    vaga4.setTypeface(null, Typeface.BOLD);
+    //                    vaga4.setText("OCUPADO\n" + parking.getMatriculaFromSavedPlace());
+    //                    vaga4.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.button_border2));
+    //                }
+    //                if (lugaresReservados2.contains("vaga5")) {
+    //                    parking.setVaga("vaga5");
+    //                    vaga5.setTypeface(null, Typeface.BOLD);
+    //                    vaga5.setText("OCUPADO\n" + parking.getMatriculaFromSavedPlace());
+    //                    vaga5.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.button_border2));
+    //                }
+    //                if (lugaresReservados2.contains("vaga6")) {
+    //                    parking.setVaga("vaga6");
+    //                    vaga6.setTypeface(null, Typeface.BOLD);
+    //                    vaga6.setText("OCUPADO\n" + parking.getMatriculaFromSavedPlace());
+    //                    vaga6.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.button_border2));
+    //                }
+    //                if (lugaresReservados2.contains("vaga7")) {
+    //                    parking.setVaga("vaga7");
+    //                    vaga7.setTypeface(null, Typeface.BOLD);
+    //                    vaga7.setText("OCUPADO\n" + parking.getMatriculaFromSavedPlace());
+    //                    vaga7.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.button_border2));
+    //                }
+    //                if (lugaresReservados2.contains("vaga8")) {
+    //                    parking.setVaga("vaga8");
+    //                    vaga8.setTypeface(null, Typeface.BOLD);
+    //                    vaga8.setText("OCUPADO\n" + parking.getMatriculaFromSavedPlace());
+    //                    vaga8.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.button_border2));
+    //                }
+    //                if (lugaresReservados2.contains("vaga9")) {
+    //                    parking.setVaga("vaga9");
+    //                    vaga9.setTypeface(null, Typeface.BOLD);
+    //                    vaga9.setText("OCUPADO\n" + parking.getMatriculaFromSavedPlace());
+    //                    vaga9.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.button_border2));
+    //                }
+    //                if (lugaresReservados2.contains("vaga10")) {
+    //                    parking.setVaga("vaga10");
+    //                    vaga10.setTypeface(null, Typeface.BOLD);
+    //                    vaga10.setText("OCUPADO\n" + parking.getMatriculaFromSavedPlace());
+    //                    vaga10.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.button_border2));
+    //                }
+    //                if (lugaresReservados2.contains("vaga11")) {
+    //                    parking.setVaga("vaga11");
+    //                    vaga11.setTypeface(null, Typeface.BOLD);
+    //                    vaga11.setText("OCUPADO\n" + parking.getMatriculaFromSavedPlace());
+    //                    vaga11.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.button_border2));
+    //                }
+    //                if (lugaresReservados2.contains("vaga12")) {
+    //                    parking.setVaga("vaga12");
+    //                    vaga12.setTypeface(null, Typeface.BOLD);
+    //                    vaga12.setText("OCUPADO\n" + parking.getMatriculaFromSavedPlace());
+    //                    vaga12.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.button_border2));
+    //                }
+    //                if (lugaresReservados2.contains("vaga13")) {
+    //                    parking.setVaga("vaga13");
+    //                    vaga13.setTypeface(null, Typeface.BOLD);
+    //                    vaga13.setText("OCUPADO\n" + parking.getMatriculaFromSavedPlace());
+    //                    vaga13.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.button_border2));
+    //                }
+    //                if (lugaresReservados2.contains("vaga14")) {
+    //                    parking.setVaga("vaga14");
+    //                    vaga14.setTypeface(null, Typeface.BOLD);
+    //                    vaga14.setText("OCUPADO\n" + parking.getMatriculaFromSavedPlace());
+    //                    vaga14.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.button_border2));
+    //                }
+    //                if (lugaresReservados2.contains("vaga15")) {
+    //                    parking.setVaga("vaga15");
+    //                    vaga15.setTypeface(null, Typeface.BOLD);
+    //                    vaga15.setText("OCUPADO\n" + parking.getMatriculaFromSavedPlace());
+    //                    vaga15.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.button_border2));
+    //                }
+    //                if (lugaresReservados2.contains("vaga16")) {
+    //                    parking.setVaga("vaga16");
+    //                    vaga16.setTypeface(null, Typeface.BOLD);
+    //                    vaga16.setText("OCUPADO\n" + parking.getMatriculaFromSavedPlace());
+    //                    vaga16.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.button_border2));
+    //                }
+    //                if (lugaresReservados2.contains("vaga17")) {
+    //                    parking.setVaga("vaga17");
+    //                    vaga17.setTypeface(null, Typeface.BOLD);
+    //                    vaga17.setText("OCUPADO\n" + parking.getMatriculaFromSavedPlace());
+    //                    vaga17.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.button_border2));
+    //                }
+    //                if (lugaresReservados2.contains("vaga18")) {
+    //                    parking.setVaga("vaga18");
+    //                    vaga18.setTypeface(null, Typeface.BOLD);
+    //                    vaga18.setText("OCUPADO\n" + parking.getMatriculaFromSavedPlace());
+    //                    vaga18.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.button_border2));
+    //                }
+    //            }
+    //        }, 0, 5000);

@@ -37,12 +37,7 @@ public class DBFunctions
         } catch (Exception e)
         {
             e.printStackTrace();
-            SimpleAlert alert = new SimpleAlert(this.context);
-            alert.setContext(context);
-            alert.setMessage(e.getMessage());
-            alert.show();
         }
-        //connection.close();
     }
 
     public ResultSet selectCommand(String Command)
@@ -56,10 +51,6 @@ public class DBFunctions
         } catch (Exception e)
         {
             e.printStackTrace();
-            SimpleAlert alert = new SimpleAlert(this.context);
-            alert.setContext(context);
-            alert.setMessage(e.getMessage());
-            alert.show();
         }
         return null;
     }

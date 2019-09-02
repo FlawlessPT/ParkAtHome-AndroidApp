@@ -13,7 +13,7 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".MainLogin">
+        <activity android:name=".activities.MainLogin">
             <intent-filter>
                 <!--<action android:name="android.intent.action.MAIN"/>-->
 
@@ -21,24 +21,24 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".SettingsActivity"
+                android:name=".activities.SettingsActivity"
                 android:label="@string/title_activity_settings"
-                android:parentActivityName=".MainLogin">
+                android:parentActivityName=".activities.MainLogin">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value="pt.park_at_home.parkathome.MainLogin"/>
+                    android:value="pt.park_at_home.parkathome.activities.MainLogin"/>
         </activity>
         <activity
-                android:name=".Parking"
+                android:name=".activities.Parking"
                 android:label="@string/title_activity_parking"
-                android:parentActivityName=".MainLogin"
+                android:parentActivityName=".activities.MainLogin"
                 android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value="pt.park_at_home.parkathome.MainLogin"/>
+                    android:value="pt.park_at_home.parkathome.activities.MainLogin"/>
         </activity>
         <activity
-                android:name=".loading_screen"
+                android:name=".activities.loading_screen"
                 android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

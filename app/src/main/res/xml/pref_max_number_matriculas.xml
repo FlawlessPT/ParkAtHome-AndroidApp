@@ -5,18 +5,10 @@
     <EditTextPreference
             android:capitalize="words"
             android:inputType="textCapWords"
-            android:key="username"
+            android:key="max_number_matriculas"
             android:maxLines="1"
             android:selectAllOnFocus="true"
             android:singleLine="true"
-            android:title="Nome Utilizador"/>
-    <EditTextPreference
-            android:capitalize="words"
-            android:inputType="textCapWords"
-            android:key="password"
-            android:maxLines="1"
-            android:selectAllOnFocus="true"
-            android:singleLine="true"
-            android:title="Password"
-    />
+            android:title="Número limite de matriculas por utilizador"
+        />
 </PreferenceScreen>

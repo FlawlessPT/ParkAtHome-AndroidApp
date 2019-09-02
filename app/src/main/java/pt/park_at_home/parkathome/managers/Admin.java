@@ -35,9 +35,6 @@ public class Admin
         {
             //connection.close();
             e.printStackTrace();
-            SimpleAlert alert = new SimpleAlert(this.context);
-            alert.setMessage("AllData: " + e.getMessage());
-            alert.show();
         }
         //        SimpleAlert alert2 = new SimpleAlert(this.context);
         //        alert2.setMessage("AllData#2: " + connection.getStateToString());
@@ -71,9 +68,6 @@ public class Admin
         } catch (Exception e)
         {
             e.printStackTrace();
-            SimpleAlert alert = new SimpleAlert(this.context);
-            alert.setMessage("Username: " + e.getMessage());
-            alert.show();
         }
         return this.userName;
     }
@@ -90,9 +84,6 @@ public class Admin
         {
             //connection.close();
             e.printStackTrace();
-            SimpleAlert alert = new SimpleAlert(this.context);
-            alert.setMessage("Username: " + e.getMessage());
-            alert.show();
         }
     }
 
@@ -102,15 +93,15 @@ public class Admin
         DBFunctions functions = new DBFunctions(this.context);
         try
         {
-            SimpleAlert alert = new SimpleAlert(this.context);
-            alert.setMessage("Password-Admin#1: " + connection.getStateToString());
-            alert.show();
+//            SimpleAlert alert = new SimpleAlert(this.context);
+//            alert.setMessage("Password-Admin#1: " + connection.getStateToString());
+//            alert.show();
             ResultSet resultSet = functions.selectCommand("SELECT Password FROM utilizadores WHERE isAdmin='1' LIMIT 1");
             if (resultSet.next())
                 this.password = resultSet.getString("Password");
-            SimpleAlert alert2 = new SimpleAlert(this.context);
-            alert2.setMessage("Password-Admin#2: " + connection.getStateToString());
-            alert2.show();
+//            SimpleAlert alert2 = new SimpleAlert(this.context);
+//            alert2.setMessage("Password-Admin#2: " + connection.getStateToString());
+//            alert2.show();
             //resultSet.close();
             //connection.close();
             //            SimpleAlert alert3 = new SimpleAlert(this.context);
@@ -120,9 +111,6 @@ public class Admin
         {
             //connection.close();
             e.printStackTrace();
-            SimpleAlert alert = new SimpleAlert(this.context);
-            alert.setMessage("Password: " + e.getMessage());
-            alert.show();
         }
         return this.password;
     }
@@ -140,9 +128,6 @@ public class Admin
         {
             //connection.close();
             e.printStackTrace();
-            SimpleAlert alert = new SimpleAlert(this.context);
-            alert.setMessage("Password: " + e.getMessage());
-            alert.show();
         }
     }
 }

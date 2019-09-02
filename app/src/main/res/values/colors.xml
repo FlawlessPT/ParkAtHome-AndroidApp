@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--<color name="colorPrimary">#0061ff</color>-->
+    <!--<color name="colorPrimaryDark">#6156ff</color>-->
+    <!--<color name="colorAccent">#6156ff</color>-->
+    <!--<color name="colorParking">#635555</color>-->
     <color name="colorPrimary">#0061ff</color>
     <color name="colorPrimaryDark">#6156ff</color>
     <color name="colorAccent">#6156ff</color>

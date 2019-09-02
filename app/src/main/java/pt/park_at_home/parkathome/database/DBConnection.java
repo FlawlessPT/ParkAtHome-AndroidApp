@@ -43,9 +43,6 @@ public class DBConnection
         } catch (Exception e)
         {
             e.printStackTrace();
-            SimpleAlert simpleAlert = new SimpleAlert(this.context);
-            simpleAlert.setMessage("Ligação já se encontra aberta!" + " " + e.getMessage());
-            simpleAlert.show();
         }
     }
 
@@ -82,9 +79,6 @@ public class DBConnection
         } catch (Exception e)
         {
             e.printStackTrace();
-            SimpleAlert simpleAlert = new SimpleAlert(this.context);
-            simpleAlert.setMessage(e.getMessage());
-            simpleAlert.show();
         }
         return state;
     }
@@ -102,9 +96,6 @@ public class DBConnection
         } catch (Exception e)
         {
             e.printStackTrace();
-            SimpleAlert alert = new SimpleAlert(this.context);
-            alert.setMessage(e.getMessage());
-            alert.show();
         }
         return state;
     }
@@ -120,9 +111,6 @@ public class DBConnection
         } catch (Exception e)
         {
             e.printStackTrace();
-            SimpleAlert simpleAlert = new SimpleAlert(this.context);
-            simpleAlert.setMessage("A ligação não se encontra aberta!");
-            simpleAlert.show();
         }
     }
 

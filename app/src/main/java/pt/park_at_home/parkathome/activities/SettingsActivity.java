@@ -1,4 +1,4 @@
-package pt.park_at_home.parkathome;
+package pt.park_at_home.parkathome.activities;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -15,8 +15,12 @@ import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.text.TextUtils;
 import android.view.MenuItem;
+
+import pt.park_at_home.parkathome.R;
 import pt.park_at_home.parkathome.managers.Admin;
+import pt.park_at_home.parkathome.managers.Matriculas;
 import pt.park_at_home.parkathome.utils.AppCompatPreferenceActivity;
+import pt.park_at_home.parkathome.utils.MaxNumberMatriculasFile;
 import pt.park_at_home.parkathome.utils.SimpleAlert;
 
 import java.util.List;
@@ -52,35 +56,6 @@ public class SettingsActivity extends AppCompatPreferenceActivity
 
             // Set the summary to reflect the new value.
             preference.setSummary(index >= 0 ? listPreference.getEntries()[index] : null);
-
-        }
-        else if (preference instanceof RingtonePreference)
-        {
-            // For ringtone preferences, look up the correct display value
-            // using RingtoneManager.
-            if (TextUtils.isEmpty(stringValue))
-            {
-                // Empty values correspond to 'silent' (no ringtone).
-                preference.setSummary(R.string.pref_ringtone_silent);
-
-            }
-            else
-            {
-                Ringtone ringtone = RingtoneManager.getRingtone(preference.getContext(), Uri.parse(stringValue));
-
-                if (ringtone == null)
-                {
-                    // Clear the summary if there was a lookup error.
-                    preference.setSummary(null);
-                }
-                else
-                {
-                    // Set the summary to reflect the new ringtone display
-                    // name.
-                    String name = ringtone.getTitle(preference.getContext());
-                    preference.setSummary(name);
-                }
-            }
 
         }
         else
@@ -180,110 +155,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity
      */
     protected boolean isValidFragment(String fragmentName)
     {
-        return PreferenceFragment.class.getName().equals(fragmentName) || GeneralPreferenceFragment.class.getName().equals(fragmentName) || DataSyncPreferenceFragment.class.getName().equals(fragmentName) || NotificationPreferenceFragment.class.getName().equals(fragmentName) || SettingsLoginFragment.class.getName().equals(fragmentName);
-    }
-
-    /**
-     * This fragment shows general preferences only. It is used when the
-     * activity is showing a two-pane settings UI.
-     */
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    public static class GeneralPreferenceFragment extends PreferenceFragment
-    {
-        @Override
-        public void onCreate(Bundle savedInstanceState)
-        {
-            super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.pref_general);
-            setHasOptionsMenu(true);
-
-            // Bind the summaries of EditText/List/Dialog/Ringtone preferences
-            // to their values. When their values change, their summaries are
-            // updated to reflect the new value, per the Android Design
-            // guidelines.
-            bindPreferenceSummaryToValue(findPreference("example_text"));
-            bindPreferenceSummaryToValue(findPreference("example_list"));
-        }
-
-        @Override
-        public boolean onOptionsItemSelected(MenuItem item)
-        {
-            int id = item.getItemId();
-            if (id == android.R.id.home)
-            {
-                startActivity(new Intent(getActivity(), SettingsActivity.class));
-                return true;
-            }
-            return super.onOptionsItemSelected(item);
-        }
-    }
-
-    /**
-     * This fragment shows notification preferences only. It is used when the
-     * activity is showing a two-pane settings UI.
-     */
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    public static class NotificationPreferenceFragment extends PreferenceFragment
-    {
-        @Override
-        public void onCreate(Bundle savedInstanceState)
-        {
-            super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.pref_notification);
-            setHasOptionsMenu(true);
-
-            // Bind the summaries of EditText/List/Dialog/Ringtone preferences
-            // to their values. When their values change, their summaries are
-            // updated to reflect the new value, per the Android Design
-            // guidelines.
-            bindPreferenceSummaryToValue(findPreference("notifications_new_message_ringtone"));
-        }
-
-        @Override
-        public boolean onOptionsItemSelected(MenuItem item)
-        {
-            int id = item.getItemId();
-            if (id == android.R.id.home)
-            {
-                startActivity(new Intent(getActivity(), SettingsActivity.class));
-                return true;
-            }
-            return super.onOptionsItemSelected(item);
-        }
-    }
-
-    /**
-     * This fragment shows data and sync preferences only. It is used when the
-     * activity is showing a two-pane settings UI.
-     */
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    public static class DataSyncPreferenceFragment extends PreferenceFragment
-    {
-        @Override
-        public void onCreate(Bundle savedInstanceState)
-        {
-            super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.pref_data_sync);
-            setHasOptionsMenu(true);
-
-            // Bind the summaries of EditText/List/Dialog/Ringtone preferences
-            // to their values. When their values change, their summaries are
-            // updated to reflect the new value, per the Android Design
-            // guidelines.
-            bindPreferenceSummaryToValue(findPreference("sync_frequency"));
-        }
-
-        @Override
-        public boolean onOptionsItemSelected(MenuItem item)
-        {
-            int id = item.getItemId();
-            if (id == android.R.id.home)
-            {
-                startActivity(new Intent(getActivity(), SettingsActivity.class));
-                return true;
-            }
-            return super.onOptionsItemSelected(item);
-        }
+        return PreferenceFragment.class.getName().equals(fragmentName) || SettingsLoginFragment.class.getName().equals(fragmentName); //|| MaxNumberMatriculasFragment.class.getName().equals(fragmentName);
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -298,6 +170,8 @@ public class SettingsActivity extends AppCompatPreferenceActivity
             EditTextPreference username = (EditTextPreference) findPreference("username");
             EditTextPreference password = (EditTextPreference) findPreference("password");
             Admin admin = new Admin(getActivity());
+            username.setText(admin.getUsername());
+            password.setText(admin.getPassword());
             username.setSummary(admin.getUsername());
             password.setSummary(admin.getPassword());
         }
@@ -315,6 +189,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity
                     Admin admin = new Admin(getActivity());
                     username.setSummary(username.getEditText().getText());
                     admin.setUsername(username.getEditText().getText().toString());
+                    username.setText(admin.getUsername());
                 } catch (Exception e)
                 {
                     SimpleAlert alert = new SimpleAlert(getActivity());
@@ -332,6 +207,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity
                     Admin admin = new Admin(getActivity());
                     password.setSummary(password.getEditText().getText());
                     admin.setPassword(password.getEditText().getText().toString());
+                    password.setText(admin.getPassword());
                 } catch (Exception e)
                 {
                     SimpleAlert alert = new SimpleAlert(getActivity());
@@ -356,4 +232,57 @@ public class SettingsActivity extends AppCompatPreferenceActivity
             return super.onOptionsItemSelected(item);
         }
     }
+
+//    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+//    public static class MaxNumberMatriculasFragment extends PreferenceFragment
+//    {
+//        @Override
+//        public void onCreate(Bundle savedInstanceState)
+//        {
+//            super.onCreate(savedInstanceState);
+//            addPreferencesFromResource(R.xml.pref_max_number_matriculas);
+//            setHasOptionsMenu(true);
+//            EditTextPreference max = (EditTextPreference) findPreference("max_number_matriculas");
+//            Matriculas matriculas = new Matriculas(getActivity());
+//            max.setText(String.valueOf(matriculas.getMaxNumberMatriculas()));
+//            max.setSummary(String.valueOf(matriculas.getMaxNumberMatriculas()));
+//        }
+//
+//        @Override
+//        public void onResume()
+//        {
+//            EditTextPreference max = (EditTextPreference) findPreference("max_number_matriculas");
+//
+//            max.setOnPreferenceChangeListener((preference, newValue) ->
+//            {
+//                try
+//                {
+//                    Matriculas matriculas = new Matriculas(getActivity());
+//                    matriculas.setMaxNumberMatriculas(Integer.parseInt(max.getEditText().getText().toString()));
+//                    max.setText(max.getEditText().getText().toString());
+//                    max.setSummary(max.getEditText().getText().toString());
+//                } catch (Exception e)
+//                {
+//                    SimpleAlert alert = new SimpleAlert(getActivity());
+//                    alert.setMessage(e.getMessage());
+//                    alert.show();
+//                }
+//
+//                return false;
+//            });
+//            super.onResume();
+//        }
+//
+//        @Override
+//        public boolean onOptionsItemSelected(MenuItem item)
+//        {
+//            int id = item.getItemId();
+//            if (id == android.R.id.home)
+//            {
+//                startActivity(new Intent(getActivity(), SettingsActivity.class));
+//                return true;
+//            }
+//            return super.onOptionsItemSelected(item);
+//        }
+//    }
 }

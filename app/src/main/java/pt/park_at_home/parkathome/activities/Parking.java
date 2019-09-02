@@ -1,4 +1,4 @@
-package pt.park_at_home.parkathome;
+package pt.park_at_home.parkathome.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,17 +13,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import pt.park_at_home.parkathome.database.DBConnection;
-import pt.park_at_home.parkathome.utils.SimpleAlert;
-import pt.park_at_home.parkathome.utils.TempFile;
 
-import java.util.Timer;
-import java.util.TimerTask;
+import pt.park_at_home.parkathome.fragments.MatriculasManagerFragment;
+import pt.park_at_home.parkathome.fragments.ParkingFragment;
+import pt.park_at_home.parkathome.fragments.ProfileFragment;
+import pt.park_at_home.parkathome.R;
+import pt.park_at_home.parkathome.managers.LoggedUser;
 
 public class Parking extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
     private Context ctx = Parking.this;
     TextView drawerTitle;
+    TextView drawerDesc;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -34,11 +35,6 @@ public class Parking extends AppCompatActivity implements NavigationView.OnNavig
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //        DBConnection connection = new DBConnection(ctx);
-        //        SimpleAlert simpleAlert = new SimpleAlert(ctx);
-        //        simpleAlert.setMessage("Estado da ligação: " + connection.getStateToString());
-        //        simpleAlert.show();
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -48,26 +44,11 @@ public class Parking extends AppCompatActivity implements NavigationView.OnNavig
         navigationView.setNavigationItemSelectedListener(this);
 
         View headerView = navigationView.getHeaderView(0);
-        TempFile tempFile = new TempFile(ctx);
+        LoggedUser loggedUser = new LoggedUser(this);
         drawerTitle = headerView.findViewById(R.id.ProfileNameTextView);
-        int separador = tempFile.read().indexOf("|");
-        drawerTitle.setText(tempFile.read().substring(separador + 1));
-
-        //        SimpleAlert simpleAlert2 = new SimpleAlert(Parking.this);
-        //
-        //        Timer t = new Timer();
-        //
-        //        t.schedule(new TimerTask()
-        //        {
-        //            @Override
-        //            public void run()
-        //            {
-        //                int contar = 0;
-        //                contar++;
-        //                System.out.println(contar + "");
-        //            }
-        //        }, 0, 3000);
-        //        System.out.println("Resetou!");
+        drawerDesc = headerView.findViewById(R.id.MatriculasTextView);
+        drawerTitle.setText(loggedUser.getNome());
+        drawerDesc.setText(loggedUser.getMatriculas());
 
         if (savedInstanceState == null)
         {
@@ -79,17 +60,6 @@ public class Parking extends AppCompatActivity implements NavigationView.OnNavig
     private void checkPark()
     {
 
-    }
-
-    @Override
-    public void onDestroy()
-    {
-        //        TesteMessage.sendTesteMessage1(this);
-        //        OnlineUsers onlineUsers = new OnlineUsers(this);
-        //        TempFile tempFile = new TempFile(ctx);
-        //        int separador = tempFile.read().indexOf("|");
-        //        onlineUsers.removeUser(tempFile.read().substring(0, separador-1));
-        super.onDestroy();
     }
 
     @Override
@@ -130,24 +100,49 @@ public class Parking extends AppCompatActivity implements NavigationView.OnNavig
     //
     //        return super.onOptionsItemSelected(item);
     //    }
-
-    //
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item)
     {
-        // Handle navigation view item clicks here.
         int id = item.getItemId();
 
         if (id == R.id.nav_parking)
         {
+            NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+            navigationView.setNavigationItemSelectedListener(this);
+
+            View headerView = navigationView.getHeaderView(0);
+            LoggedUser loggedUser = new LoggedUser(this);
+            drawerTitle = headerView.findViewById(R.id.ProfileNameTextView);
+            drawerDesc = headerView.findViewById(R.id.MatriculasTextView);
+            drawerTitle.setText(loggedUser.getNome());
+            drawerDesc.setText(loggedUser.getMatriculas());
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ParkingFragment()).commit();
-            //Toast.makeText(getApplicationContext(), "Parking", Toast.LENGTH_SHORT).show();
         }
         else if (id == R.id.nav_profile)
         {
+            NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+            navigationView.setNavigationItemSelectedListener(this);
+
+            View headerView = navigationView.getHeaderView(0);
+            LoggedUser loggedUser = new LoggedUser(this);
+            drawerTitle = headerView.findViewById(R.id.ProfileNameTextView);
+            drawerDesc = headerView.findViewById(R.id.MatriculasTextView);
+            drawerTitle.setText(loggedUser.getNome());
+            drawerDesc.setText(loggedUser.getMatriculas());
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProfileFragment()).commit();
-            //Toast.makeText(getApplicationContext(), "Perfil", Toast.LENGTH_SHORT).show();
+        }
+        else if (id == R.id.nav_matriculas) {
+            NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+            navigationView.setNavigationItemSelectedListener(this);
+
+            View headerView = navigationView.getHeaderView(0);
+            LoggedUser loggedUser = new LoggedUser(this);
+            drawerTitle = headerView.findViewById(R.id.ProfileNameTextView);
+            drawerDesc = headerView.findViewById(R.id.MatriculasTextView);
+            drawerTitle.setText(loggedUser.getNome());
+            drawerDesc.setText(loggedUser.getMatriculas());
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MatriculasManagerFragment()).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
